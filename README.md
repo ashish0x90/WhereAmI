@@ -18,5 +18,4 @@ Read more about it here :
 
 - Python
 - [Google App Engine](http://code.google.com/appengine/)
-- [Geo.js](http://code.google.com/p/geo-location-javascript/)
 - [Google Visualization API](http://code.google.com/apis/visualization/documentation/gallery/map.html)
