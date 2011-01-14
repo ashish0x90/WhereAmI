@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script type="text/javascript" src="/js/geo.js"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  </head>
+
+  <body>
+    <div id="map_div" style="width: 100%; height: 80%"></div>
+    <script type="text/javascript">
+      function loadMap(lat, long, locationString) {
+      google.load("visualization", "1", {packages:["map"], "callback" : drawMap});
+      function drawMap() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Lat');
+        data.addColumn('number', 'Lon');
+        data.addColumn('string', 'Name');
+        data.addRows(1);
+        data.setCell(0, 0, lat);
+        data.setCell(0, 1, long);
+        data.setCell(0, 2, locationString);
+        var map = new google.visualization.Map(document.getElementById('map_div'));
+      map.draw(data, {showTip: true, mapType:'normal', useMapTypeControl:true, zoomLevel: 17, enableScrollWheel: true});
+      }
+
+}
+
+function errorCallback(geoErrorObj) {
+	 alert('Error : '+geoErrorObj.code);
+}
+
+function successCallback(position) {
+var locationString = "Latitude:" + position.coords.latitude + ", Longitude: " + position.coords.longitude + "</br>With Accuracy: "+position.coords.accuracy;
+loadMap(position.coords.latitude, position.coords.longitude, locationString);
+}
+if(geo_position_js.init()){
+   geo_position_js.getCurrentPosition(successCallback , errorCallback , {timeout:10000, maximumAge: 75000});
+}
+else{
+   alert("Geolocation functionality doesn't seem to be available on your device");
+}
+
+</script>
+
+  </body>
+</html>
