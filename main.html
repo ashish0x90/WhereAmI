@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <title>HTML5 GeoLocation API demo - Where Am I?</title>
+
  
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <script type="text/javascript" src="/js/cssutility.js"></script>
@@ -12,14 +13,13 @@
   </head>
 
   <body>
-    <div style="margin:20px;"><strong>A HTML5 GeoLocation API demo - </strong> Using the GeoLocation API, the app shows your current location in Google Maps. <br />Powered By <a href="http://code.google.com/apis/visualization/documentation/gallery/map.html">Google Visualization API</a> and Google App engine. 
-    <span id="status" class="normal">You gotta share your location first!!!</span>
+    <div style="margin:20px;"><strong>A HTML5 GeoLocation API demo - </strong> Using the HTML5 GeoLocation API, the app shows your current location in Google Maps. 
+      <br />Powered By <a href="http://code.google.com/apis/visualization/documentation/gallery/map.html" title="Google Visualization API">Google Visualization API</a> and Google App engine. <a href="http://www.mozilla.com/en-US/firefox/geolocation/" title="Firefox Docs">How it works??</a>
+      <div style="margin-top:20px;"><em>Status - </em><span id="status" class="normal">You gotta share your location first!!!</span> <span style="right:30%; position:absolute;"><em>Brought to you by -</em> <a href="http://42bits.wordpress.com">Ashish_0x90</a></span></div>
+
     </div>
+    <a href="https://github.com/ashish0x90/WhereAmI"><img id="github-ribbon" src="https://assets1.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71?repo=&url=http%3A%2F%2Fs3.amazonaws.com%2Fgithub%2Fribbons%2Fforkme_right_darkblue_121621.png&path=" alt="Fork me on GitHub"></a>
     <div id="map_viz"></div>
-    <a href="https://github.com/ashish0x90/WhereAmI"><img id="github-ribbon" src="https://assets1.github.com/img/"+
-    							  "7afbc8b248c68eb468279e8c17986ad46549fb71?repo=&url"+
-    							  "=http%3A%2F%2Fs3.amazonaws.com%2Fgithub%2Fribbons%2Fforkme_"+
-    							  "right_darkblue_121621.png&path=" alt="Fork me on GitHub"></a>
 
     <script type="text/javascript">
       function updateStatus(status, elem, cls)
@@ -28,7 +28,7 @@
       updateClass(elem, cls);
       }
       
-      // Try to detect user's location, and update the status accordingly.
+      // Try detecting user's location, and provide him process status update accordingly.
       function onSuccess(status)
       {
       updateStatus(status["message"], document.getElementById("status"), "normal");
@@ -60,8 +60,6 @@
 
 var geoObj = new geo(onSuccess, onError);
 geoObj.getCurrentPosition();
-
-
 
 </script>
 

@@ -6,7 +6,7 @@ from google.appengine.ext import webapp
 
 class index(webapp.RequestHandler):
   def get(self):
-    path = os.path.join(os.path.dirname(__file__), 'index.html')
+    path = os.path.join(os.path.dirname(__file__), 'main.html')
     self.response.out.write(template.render(path, {}))
 
 application = webapp.WSGIApplication([
