@@ -11,7 +11,7 @@ class index(webapp.RequestHandler):
 
 application = webapp.WSGIApplication([
   ('/', index),
-], debug=True)
+], debug=False)
 
 
 def main():

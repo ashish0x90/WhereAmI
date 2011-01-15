@@ -11,4 +11,4 @@ handlers:
   static_dir: css
 
 - url: .*
-  script: demo.py
+  script: main.py
